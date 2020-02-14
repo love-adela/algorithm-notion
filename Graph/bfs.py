@@ -1,3 +1,4 @@
+# O(V+E)
 BST = [
     0,
     [1, [2, None, None], [3, None, None]],
