@@ -13,6 +13,7 @@
 ## 1. Sorting Algorithm
 
 ### 1.1 Comparison Sort
+
   * O(n^2) 소트: bubble sort, selection sort, insertion sort
   * O(nlogn) 소트: quick sort, merge sort, heap sort
   * O(n^2) 소트와 O(nlogn) 소트를 섞은것: intro sort, tim sort

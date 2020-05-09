@@ -13,7 +13,7 @@
   * Direct Access (= Random Access)
     * Array에서 값을 조회할 때 시간복잡도는 O(1)이다.
     * index 번호를 알았을 때 바로 접근이 가능하다.
-    * TODO: Memory Address / 컴퓨터구조 (32비트 운영체제에서의 메모리주소가 4바이트, 64비트는 ? 8)
+    * TODO: Memory Address / 컴퓨터구조 (32비트 운영체제에서의 메모리주소가 4바이트, 64비트는 8바이트)
   * Cache Hit가 잘 발생한다.
     * Cache Hit : 원하는 것이 Cache에 있다.... 여러 책을 빌려 꽂아두어 책장에 원하는 책이 있다.
       * Cache : CPU에 들어있다. (1 word: CPU가 처리하는 기본 단위)
@@ -22,8 +22,8 @@
     * Cache란? Cache에 저장되면 더 빠르다.
       * https://ko.wikipedia.org/wiki/CPU_%EC%BA%90%EC%8B%9C
     * 원인: 지역성(locality) : 메모리에서 CPU 내의 캐쉬로 데이터를 가져왔을 때 근처 데이터를 한번에 가져옴. 어떤 데이터를 불러오면 근처에 있는 데이터를 참조할 확률이 높기 떄문에.
-    * 최대한 가져올 수 있는 여러개의 데이터를 가져온다. 
-    
+    * 최대한 가져올 수 있는 여러개의 데이터를 가져온다.
+
   * register 단위와 data 단위와 word단위가 보통 일치.
     * 32 register = 32 data = 32 bit address...로 쉽게 구현
     - 32 bit CPU에서 24 bit address를 쓰는 경우도 있음. (충분하다. 32비트는 너무 크다고 생각했기 때문.)
@@ -34,7 +34,6 @@
       - 16 bit computer : 2byte, 16bit
       - 32 bit computer : 4byte, 32 bit
       - 64 bit computer : 8byte, 64 bit 데이터 모델을 사용.. -> 메모리나 디스크가 아까워서.
-
 
 ==========
 
@@ -47,5 +46,3 @@
     * 참고로 기본으로 dictionary를 사용하고 이는 hash table 구조를 취함.
   * Array와 달리 List는 배열의 크기를 미리 설정해두지 않아도 되는데, 대신 값을 조회할 때 direct access가 어렵다. 모든 값을 순회해야 함(Linked List). 즉, O(N)
   * Cache hit 잘 안 남.
-
-
