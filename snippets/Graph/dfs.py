@@ -1,48 +1,31 @@
-BST = [
-    "*",
-    ["+", [1, None, None], [2, None, None]],
-    [3, None, None],
-]
+# 재귀함수를 사용하지 않고 DFS 구현
+# [1, 3, 8, 7, 5, 6, 2, 4] 가 return 되도록 할 것
 
-# Stack 쓰기
-# Prefix
-def dfs_prefix(tree:tuple):
-    stack = [tree]
+# O(N)
+def dfs(adjacent, vertex):
+    candidates = [vertex]
+    visited = []
+    while candidates:
+        u = candidates.pop()
+        visited.append(u)
+        for v in adjacent[u]:
+            if v not in visited and v not in candidates:
+                candidates.append(v)
 
-    while stack:
-        node = stack.pop()
-        value, left, right = node
-        print(value, end=" ") # 1
-        if right is not None:
-            stack.append(right)            
-        if left is not None:
-            stack.append(left)
-        
+    return visited
 
-def dfs_infix(tree:tuple): 
-    if tree is None:
-        return
-    dfs_infix(tree[1])
-    print(tree[0], end=" ")
-    dfs_infix(tree[2])
+#O(1)
+def dfs(adjacent, vertex):
+    candidates = [vertex]
+    visited = [False]*(len(adjacent)+1)
+    while candidates:
+        u = candidates.pop()
+        print(u, end=' ')
+        for v in adjacent[u]:
+            if not visited[v]:
+                visited[v] = True
+                candidates.append(v)
+    return visited
 
-
-# Postfix
-def dfs_postfix(tree:tuple):
-    if tree is None:
-        return None
-        
-    dfs_postfix(tree[1])
-    dfs_postfix(tree[2])
-    print(tree[0], end=" ")
-
-
-# Test
-print("infix : ", end=" ")
-dfs_infix(BST)
-
-print("\nprefix : ", end=" ")
-dfs_prefix(BST)
-
-print("\npostfix : ", end=" ")
-dfs_postfix(BST)
+graph = {1:[2,3], 2:[3,4,5], 3:[5,7,8], 4:[5], 5:[6], 6:[], 7:[8], 8:[]}
+dfs(graph,1)
