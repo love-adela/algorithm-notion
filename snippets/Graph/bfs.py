@@ -1,36 +1,17 @@
 from collections import deque
 def bfs(adjacent, vertex):
-    q = deque([vertex])
-    distance = [-1]*len(adjacent)
-    distance[v] = 0
-    while q:
-        p = q.popleft()
-        for q in adjacen[p]:
-            if distance[q]
+    d = deque([vertex]) # let d be a queue
+    # label vertex as discovered
+    distance = [-1]*(len(adjacent)+1)
+    distance[vertex] = 0
+    while d: # while d is not empty do
+        p = d.popleft()
+        for q in adjacent[p]:
+            if distance[q] != -1:
+                continue
+            distance[q] = distance[p] + 1
+            d.append(q)
+    return distance
 
-
-
-
-
-
-# O(V+E)
-BST = [
-    0,
-    [1, [2, None, None], [3, None, None]],
-    [4, None, [5, None, None]],
-] # Tree
-
-# Queue 쓰기
-def bfs(tree: tuple) -> None:    
-    queue = [tree]    
-    while queue: # list가 비어있을 때까지 돌아간다. 즉, while True와 같은 표현
-        node = queue.pop(0)
-        value, left, right = node # unpacking
-        print(value)
-        if left is not None:
-            queue.append(left)
-        if right is not None:
-            queue.append(right)
-
-# Test
-bfs(BST)
+graph = {1:[2,3], 2:[3,4,5], 3:[5,7,8], 4:[5], 5:[6], 6:[], 7:[8], 8:[]}
+print(bfs(graph, 1))
