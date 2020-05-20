@@ -1,3 +1,18 @@
+from collections import deque
+def bfs(adjacent, vertex):
+    q = deque([vertex])
+    distance = [-1]*len(adjacent)
+    distance[v] = 0
+    while q:
+        p = q.popleft()
+        for q in adjacen[p]:
+            if distance[q]
+
+
+
+
+
+
 # O(V+E)
 BST = [
     0,
