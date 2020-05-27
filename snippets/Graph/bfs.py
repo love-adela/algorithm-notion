@@ -2,7 +2,8 @@
 * adjacent : 입력으로 주어지는 그래프 `dict`
 * start : 시작정점 `int`
 * candidates: 방문해야 할 정점 `queue`
-* visited: 방문한 정점 `list`
+* start: 방문한 정점 `list`
+bfs 결과는 [1, 2, 3, 4, 5, 7, 8, 6]이 되어야 함
 """
 from collections import deque
 def bfs(adjacent:dict, start:int)-> list:
