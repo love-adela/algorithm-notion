@@ -9,20 +9,16 @@ from collections import deque
 def bfs(adjacent:dict, start:int)-> list:
     lst = []
     candidates = deque([start])
-    visited = [False] * (len(adjacent)+1)
-    
+    was_candidate = [False] * (len(adjacent)+1)
+    was_candidate[start] = True
     while candidates:
         curr = candidates.popleft()
-        if visited[curr]: continue
-        visited[curr] = True
         for vertex in adjacent[curr]:
-            if not visited[vertex]:
+            if not was_candidate[vertex]:
+                was_candidate[vertex] = True
                 candidates.append(vertex)
         lst.append(curr)
     return lst
-
-
-
 
 graph = {1:[2,3], 2:[3,4,5], 3:[5,7,8], 4:[5], 5:[6],       6:[], 7:[8], 8:[]}
 print(bfs(graph, 1))
