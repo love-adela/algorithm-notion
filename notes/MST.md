@@ -2,13 +2,12 @@
 
 ## Intro
 
-모든 정점 간에 간선이 존재하는 **연결 그래프(Connected Graph)**는 경우에 따라 cyclic 할 수도 있고, acyclic 할 수도 있다.
 이 문서에서는 Minimum Spanning Trees를 소개한다.
 먼저 스패닝 트리(spanning tree)가 무엇인지 알아볼 것이다. 그리고 나서 MST가 최소한의 조건(가중치의 합이 최소가 되는 조건)을 만족시키는 자료구조로서 해당 그래프의 tree에 속한다는 사실을 확인하고 직접 구현해보려고 한다.
 
 ## Spanning Tree (신장 트리)
 
-그래프의 일부 간선을 선택해서 acyclic graph인 자료구조를 구성할 수 있다. 이 자료구조의 이름은 스패닝 트리(Spanning Tree)라고 한다.
+모든 정점 간에 간선이 존재하는 **연결 그래프(Connected Graph)**는 경우에 따라 cyclic 할 수도 있고, acyclic 할 수도 있다. 따라서 우리는 그래프의 일부 간선을 선택해서 acyclic graph인 자료구조를 구성할 수 있다. 이 자료구조의 이름은 스패닝 트리(Spanning Tree)라고 한다.
 사이클이 없는 그래프의 일종인 스패닝 트리는 **n**개의 정점과 **n-1**개의 간선을 포함한다. n개의 정점이 있는 그래프에 n-1개 이상의 간선이 존재하면 반드시 사이클이 생기기 때문이다.
 
 ## Minimum Spanning Tree (최소신장트리)
