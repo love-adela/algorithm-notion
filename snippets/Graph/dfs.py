@@ -28,4 +28,7 @@ def dfs(adjacent, vertex):
     return visited
 
 graph = {1:[2,3], 2:[3,4,5], 3:[5,7,8], 4:[5], 5:[6], 6:[], 7:[8], 8:[]}
-dfs(graph,1)
+v = int(input('1부터 8까지의 노드를 선택해서 입력하세용 : '))
+dfs(graph, v)
+print()
+print(dfs(graph, v))
