@@ -21,4 +21,5 @@ def bfs(adjacent:dict, start:int)-> list:
     return lst
 
 graph = {1:[2,3], 2:[3,4,5], 3:[5,7,8], 4:[5], 5:[6],       6:[], 7:[8], 8:[]}
-print(bfs(graph, 1))
+start = int(input('1부터 8까지의 노드 중 하나를 고르세용: '))
+print(bfs(graph, start))
