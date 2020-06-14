@@ -2,7 +2,7 @@
 # [1, 3, 8, 7, 5, 6, 2, 4] 가 return 되도록 할 것
 
 # O(N)
-#def dfs(adjacent, vertex):
+# def dfs(adjacent, vertex):
 #    candidates = [vertex]
 #    visited = []
 #    while candidates:
@@ -14,7 +14,8 @@
 #
 #    return visited
 
-#O(1)
+
+# O(1)
 def dfs(adjacent, vertex):
     candidates = [vertex]
     visited = [False]*(len(adjacent)+1)
@@ -27,6 +28,8 @@ def dfs(adjacent, vertex):
                 candidates.append(node)
     return visited
 
-graph = {1:[2,3], 2:[3,4,5], 3:[5,7,8], 4:[5], 5:[6], 6:[], 7:[8], 8:[]}
+
+graph = {1: [2, 3], 2: [3, 4, 5], 3: [5, 7, 8],
+         4: [5], 5: [6], 6: [], 7: [8], 8: []}
 start = int(input('1부터 8까지의 노드를 선택해서 입력하세용 : '))
 dfs(graph, start)
