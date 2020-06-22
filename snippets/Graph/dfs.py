@@ -19,6 +19,7 @@
 def dfs(adjacent, vertex):
     candidates = [vertex]
     visited = [False]*(len(adjacent)+1)
+    visited[vertex] = True
     while candidates:
         curr = candidates.pop()
         print(curr, end=' ')
@@ -31,5 +32,6 @@ def dfs(adjacent, vertex):
 
 graph = {1: [2, 3], 2: [3, 4, 5], 3: [5, 7, 8],
          4: [5], 5: [6], 6: [], 7: [8], 8: []}
+#graph = {1: [2, 3, 4], 2:[1, 4], 3:[1, 4], 4:[1, 2, 3]}
 start = int(input('1부터 8까지의 노드를 선택해서 입력하세용 : '))
 dfs(graph, start)
