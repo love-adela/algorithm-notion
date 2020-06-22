@@ -24,6 +24,7 @@ bfs 결과는 [1, 2, 3, 4, 5, 7, 8, 6]이 되어야 함
 def bfs(adjacent, vertex):
     candidates = [vertex]
     visited = [False] * (len(adjacent) + 1)
+    visited[vertex] = True
 
     while candidates:
         curr, *candidates = candidates
