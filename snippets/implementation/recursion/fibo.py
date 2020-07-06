@@ -38,3 +38,25 @@ print(fibo(6))
 print(fibo(7))
 print(fibo(8))
 print(fibo(9))
+
+# 꼬리 재귀로 푸는 방법
+print('-----------------------------------')
+def do_fib(n, a, b):
+    if n == 0: return a
+    else: 
+        return do_fib(n-1, b, a+b)
+
+def fib(n):
+    return do_fib(n, 0, 1)
+
+print(fib(0))
+print(fib(1))
+print(fib(2))
+print(fib(3))
+print(fib(4))
+print(fib(5))
+print(fib(6))
+print(fib(7))
+print(fib(8))
+print(fib(9))
+
